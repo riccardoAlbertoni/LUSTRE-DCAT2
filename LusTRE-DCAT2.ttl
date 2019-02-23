@@ -1,3 +1,4 @@
+
 @prefix lustrem: <http://linkeddata.ge.imati.cnr.it/dcat-void/> .
 @prefix void:  <http://rdfs.org/ns/void#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
@@ -26,7 +27,19 @@
 
 lustrem:lustre a dcat:Catalog;
     foaf:homepage <http://linkeddata.ge.imati.cnr.it/> ;
-    dcat:dataset lustrem:EARTh20140604 .
+    dcat:dataset lustrem:EARTh20140604 ;
+    dcat:service lustrem:sparqlEndPoint .
+
+lustrem:sparqlEndPoint 
+    #should it be a dcat:DataDistributionService ??
+    a dcat:DataService ;
+    dcat:endpointURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+    dct:conformsTo <https://www.w3.org/TR/sparql11-service-description/> ;
+    dcat:contactPoint lustrem:LusTRETEAM ;
+    dct:creator <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> ;
+dcat:landingPage <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215,  lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
+
 
 
     
