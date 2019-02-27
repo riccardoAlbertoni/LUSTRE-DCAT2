@@ -118,7 +118,7 @@ lustrem:EARTh20140604
         dct:language <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
         dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
         dct:modified "2014-06-04+02:00"^^xsd:date ;
-        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "EARTh- Enviromental Applications Reference THesaurus (Version: Linked Data 1.5)"@en ;
         dct:type <http://purl.org/dc/dcmitype/Dataset> ;
         pav:version "Linked Data 1.5" ;
@@ -135,7 +135,7 @@ lustrem:EARTh20140604jsonld
         a dcat:Distribution ;
         dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
         dct:modified "2014-06-04+02:00"^^xsd:date ;
-        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "JSON-LD distribution of dataset" ;
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
         dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.jsonld> ;
@@ -146,7 +146,7 @@ lustrem:EARTh20140604ttl
         dct:issued "2014-06-04+02:00"^^xsd:date ;
         dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
         dct:modified "2014-06-04+02:00"^^xsd:date ;
-        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "Turtle distribution of dataset" ;
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
         dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.ttl> ;
@@ -156,7 +156,7 @@ lustrem:EARTh20140604SPARQL
         a dcat:Distribution ;
         dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
         dct:modified "2014-06-04+02:00"^^xsd:date ;
-        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "SPARQL access to dataset" ;
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
         dcat:accessService lustrem:sparqlEndPoint .
