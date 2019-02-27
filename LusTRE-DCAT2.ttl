@@ -1,26 +1,28 @@
 
 @prefix lustrem: <http://linkeddata.ge.imati.cnr.it/dcat-void/> .
-@prefix foaf: <http://xmlns.com/foaf/> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix void:  <http://rdfs.org/ns/void#> .
-
-
-@prefix dqv:   <http://www.w3.org/ns/dqv#> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdfs:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ent: <http://www.w3.org/ns/entailment/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix lsq:   <http://linkeddata.ge.imati.cnr.it/linksetquality/> .
-@prefix qb:    <http://purl.org/linked-data/cube#> .
-@prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
+@prefix adms: <https://www.w3.org/ns/adms#> .
+@prefix dqv:   <http://www.w3.org/ns/dqv#> .
+ 
+#@prefix lsq:   <http://linkeddata.ge.imati.cnr.it/linksetquality/> .
+#@prefix qb:    <http://purl.org/linked-data/cube#> .
 
-@prefix dct:   <http://purl.org/dc/terms/> .
-@prefix daq:   <http://purl.org/eis/vocab/daq#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
-@prefix dcat:  <http://www.w3.org/ns/dcat#> .
-@prefix dc:    <http://purl.org/dc/elements/1.1/> .
-@prefix exq:   <http://linkeddata.ge.imati.cnr.it/linksetquality/qualitygraph/> .
+#@prefix daq:   <http://purl.org/eis/vocab/daq#> .
+#@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+#@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+#@prefix exq:   <http://linkeddata.ge.imati.cnr.it/linksetquality/qualitygraph/> .
 
 #@prefix pav:   <http://purl.org/pav/> .
 #@prefix ns6:   <http://linkeddata.ge.imati.cnr.it:8890/> .
@@ -36,8 +38,9 @@ lustrem:lustre a dcat:Catalog;
 lustrem:sparqlEndPoint 
     a dcat:DataDistributionService ;
     dcat:endpointURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
-    #TODO dct:conformsTo <https://www.w3.org/TR/sparql11-service-description/> ;
-    dct:conformsTo <https://www.w3.org/TR/2008/REC-rdf-sparql-query-20080115/>;
+    dct:conformsTo <https://www.w3.org/TR/sparql11-service-description/> ;
+    dcat:endpointDescription lustrem:sparqlEndpointServiceDescription ;
+    #dct:conformsTo <https://www.w3.org/TR/2008/REC-rdf-sparql-query-20080115/>;
     dcat:contactPoint lustrem:LusTRETEAM ;
     dct:creator [  
         a  foaf:Organization ;
@@ -62,6 +65,22 @@ lustrem:sparqlEndPoint
     dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215,  lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
 
 
+# Minimal endpoint description
+lustrem:sparqlEndpointServiceDescription a sd:Service ;
+    sd:endpoint <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+    sd:supportedLanguage sd:SPARQL10Query ;
+    sd:resultFormat <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle> ;
+    #sd:extensionFunction <http://example.org/Distance> ;
+    # sd:feature sd:DereferencesURIs ;
+    sd:defaultEntailmentRegime ent:RDFS ;
+    sd:defaultDataset [
+        a sd:Dataset ;
+        sd:defaultGraph [
+            a sd:Graph ;
+            void:triples 12777651
+        ] ;
+    ] .
+
 lustrem:LusTRETEAM  a    vcard:Organization, foaf:Group ;
         vcard:hasEmail   <mailto:lustre@ge.imati.cnr.it> ;
         foaf:mbox <mailto:lustre@ge.imati.cnr.it> ;
@@ -76,9 +95,10 @@ lustrem:LusTRETEAM  a    vcard:Organization, foaf:Group ;
     owl:sameAs <https://orcid.org/0000-0001-5648-2713>, <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni>;
     
     adms:identifier [ a adms:Identifier;
-    skos:notation "https://orcid.org/0000-0001-5648-2713"^^xsd:anyURI ;
-    # the authority/agency defining the identifier scheme, used if the agency has no URI
-   adms:schemaAgency "ORCID" .]
+        skos:notation "https://orcid.org/0000-0001-5648-2713"^^xsd:anyURI ;
+        # the authority/agency defining the identifier scheme, used if the agency has no URI
+        adms:schemaAgency "ORCID" 
+    ] .
     
     
     
