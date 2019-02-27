@@ -1,7 +1,10 @@
 
 @prefix lustrem: <http://linkeddata.ge.imati.cnr.it/dcat-void/> .
+@prefix foaf: <http://xmlns.com/foaf/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix void:  <http://rdfs.org/ns/void#> .
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+
 @prefix dqv:   <http://www.w3.org/ns/dqv#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -31,15 +34,52 @@ lustrem:lustre a dcat:Catalog;
     dcat:service lustrem:sparqlEndPoint .
 
 lustrem:sparqlEndPoint 
-    #should it be a dcat:DataDistributionService ??
-    a dcat:DataService ;
+    a dcat:DataDistributionService ;
     dcat:endpointURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
-    dct:conformsTo <https://www.w3.org/TR/sparql11-service-description/> ;
+    #TODO dct:conformsTo <https://www.w3.org/TR/sparql11-service-description/> ;
+    dct:conformsTo <https://www.w3.org/TR/2008/REC-rdf-sparql-query-20080115/>;
     dcat:contactPoint lustrem:LusTRETEAM ;
-    dct:creator <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> ;
-dcat:landingPage <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
-dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215,  lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
+    dct:creator [  
+        a  foaf:Organization ;
+        rdfs:label "OpenLink Software"@en ;   
+        foaf:homepage <https://www.openlinksw.com/> ;
+        ] ;
+     # What is the landing pages of a sparql end point service? The page where is possible to pose Sparql Query..
+    dcat:landingPage <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+    # What is the language of a sparql endpoint?
+    #dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+    dct:title "SPARQL endpoint for LusTRE"@en ;
+    dct:description "A SPARQL endpoint to query thesauri and controlled vocabulary provided within LusTRE" ;
+    dct:issued "2013-11-30"^^xsd:date ;
+    dct:modified "2015-09-06"^^xsd:date ;
+    dct:publisher lustrem:LusTRETEAM ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
+    prov:qualifiedAttribution [
+        a prov:Attribution ;
+        prov:agent <https://w3id.org/people/ralbertoni/> ;
+        dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
+    ] ;
+    dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215,  lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
 
 
+lustrem:LusTRETEAM  a    vcard:Organization, foaf:Group ;
+        vcard:hasEmail   <mailto:lustre@ge.imati.cnr.it> ;
+        foaf:mbox <mailto:lustre@ge.imati.cnr.it> ;
+        vcard:hasMember  <https://w3id.org/people/ralbertoni/>  , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        foaf:member <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        vcard:title      "LusTRE Team"@en .
 
+  <https://w3id.org/people/ralbertoni/> a foaf:Person ;
+    foaf:familyName "Albertoni";
+    foaf:firstName "Riccardo";
+    foaf:homepage <http://www.ge.imati.cnr.it/index.php/178-riccardo-albertoni>,  <http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni>, <https://w3id.org/people/ralbertoni/> ;
+    owl:sameAs <https://orcid.org/0000-0001-5648-2713>, <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni>;
+    
+    adms:identifier [ a adms:Identifier;
+    skos:notation "https://orcid.org/0000-0001-5648-2713"^^xsd:anyURI ;
+    # the authority/agency defining the identifier scheme, used if the agency has no URI
+   adms:schemaAgency "ORCID" .]
+    
+    
+    
     
