@@ -62,7 +62,7 @@ lustrem:sparqlEndPoint
         prov:agent <https://w3id.org/people/ralbertoni/> ;
         dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
     ] ;
-    dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215,  lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
+    dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
 
 
 # Minimal endpoint description
@@ -82,18 +82,17 @@ lustrem:sparqlEndpointServiceDescription a sd:Service ;
     ] .
 
 lustrem:LusTRETEAM  a    vcard:Organization, foaf:Group ;
-        vcard:hasEmail   <mailto:lustre@ge.imati.cnr.it> ;
-        foaf:mbox <mailto:lustre@ge.imati.cnr.it> ;
-        vcard:hasMember  <https://w3id.org/people/ralbertoni/>  , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
-        foaf:member <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
-        vcard:title      "LusTRE Team"@en .
+    vcard:hasEmail <mailto:lustre@ge.imati.cnr.it> ;
+    foaf:mbox <mailto:lustre@ge.imati.cnr.it> ;
+    vcard:hasMember <https://w3id.org/people/ralbertoni/>, <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>, <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+    foaf:member <https://w3id.org/people/ralbertoni/>, <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>,  <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+    vcard:title  "LusTRE Team"@en .
 
-  <https://w3id.org/people/ralbertoni/> a foaf:Person ;
+<https://w3id.org/people/ralbertoni/> a foaf:Person ;
     foaf:familyName "Albertoni";
     foaf:firstName "Riccardo";
-    foaf:homepage <http://www.ge.imati.cnr.it/index.php/178-riccardo-albertoni>,  <http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni>, <https://w3id.org/people/ralbertoni/> ;
+    foaf:homepage <http://www.ge.imati.cnr.it/index.php/178-riccardo-albertoni>, <http://www.imati.cnr.it/index.php/people/8-curricula/178-riccardo-albertoni>, <https://w3id.org/people/ralbertoni/> ;
     owl:sameAs <https://orcid.org/0000-0001-5648-2713>, <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni>;
-    
     adms:identifier [ a adms:Identifier;
         skos:notation "https://orcid.org/0000-0001-5648-2713"^^xsd:anyURI ;
         # the authority/agency defining the identifier scheme, used if the agency has no URI
