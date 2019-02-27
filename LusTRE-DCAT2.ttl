@@ -36,6 +36,7 @@ lustrem:lustre a dcat:Catalog;
     foaf:homePage <http://linkeddata.ge.imati.cnr.it/> ;
     dct:title "LusTRE: Linked Thesaurus fRamework for Environment"@en ;
     dct:description "LusTRE is a multilingual Thesaurus Framework (TF) for the Environment developed as part of the eENVplus project about infrastructures for the INSPIRE implementation. The Framework aims to provide shared standard and scientific terms for a common understanding of environmental data among the different communities operating in the different field of the Environment. It shall support better metadata compilation and metadata discovery for describing and finding INSPIRE data and services. LusTRE addresses the needs of different user communities in sharing digital information at cross-border level, i.e. concept inter-operability and concept-availability in multiple languages as it is needed in metadata compilation and information discovery. It can be exploited by the National Environmental Agency, the International Environmental Agency, Environmental Communities as well as Terminological Experts and the Semantic Web Community."@en ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ; 
     dcat:contactPoint lustrem:LusTRETEAM;
     dct:creator lustrem:LusTRETEAM;
     dct:publisher lustrem:LusTRETEAM;
@@ -117,6 +118,7 @@ lustrem:EARTh20140604
         dct:issued "2014-06-04+02:00"^^xsd:date ;
         dct:language <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
         dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
         dct:modified "2014-06-04+02:00"^^xsd:date ;
         dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "EARTh- Enviromental Applications Reference THesaurus (Version: Linked Data 1.5)"@en ;
@@ -137,6 +139,7 @@ lustrem:EARTh20140604jsonld
         dct:modified "2014-06-04+02:00"^^xsd:date ;
         dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "JSON-LD distribution of dataset" ;
+        dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
         dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.jsonld> ;
         dcat:mediaType "application/ld+json" .
@@ -159,6 +162,7 @@ lustrem:EARTh20140604SPARQL
         dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
         dct:title "SPARQL access to dataset" ;
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
+        dcat:accessURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
         dcat:accessService lustrem:sparqlEndPoint .
        # dcat:mediaType     "application/sparql-results+csv" , "application/sparql-results+json" , "application/sparql-results+xml" .
 
