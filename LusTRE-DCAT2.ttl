@@ -1,21 +1,22 @@
 
 @prefix lustrem: <http://linkeddata.ge.imati.cnr.it/dcat-void/> .
-@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#>
-@prefix dcat:  <http://www.w3.org/ns/dcat#> .
-@prefix dct:   <http://purl.org/dc/terms/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix ent: <http://www.w3.org/ns/entailment/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix adms: <https://www.w3.org/ns/adms#> .
-@prefix dqv:   <http://www.w3.org/ns/dqv#> .
- 
+@prefix pav:   <http://purl.org/pav/> .
+
+#@prefix dqv:   <http://www.w3.org/ns/dqv#> . 
 #@prefix lsq:   <http://linkeddata.ge.imati.cnr.it/linksetquality/> .
 #@prefix qb:    <http://purl.org/linked-data/cube#> .
 
@@ -24,14 +25,20 @@
 #@prefix dc:    <http://purl.org/dc/elements/1.1/> .
 #@prefix exq:   <http://linkeddata.ge.imati.cnr.it/linksetquality/qualitygraph/> .
 
-#@prefix pav:   <http://purl.org/pav/> .
+
 #@prefix ns6:   <http://linkeddata.ge.imati.cnr.it:8890/> .
 #@prefix qualityFramework: <http://QualityFramework/> .
 #@prefix ns8:   <http://QualityFramework/> .
 
 
 lustrem:lustre a dcat:Catalog;
-    foaf:homepage <http://linkeddata.ge.imati.cnr.it/> ;
+    dcat:landingPage <http://linkeddata.ge.imati.cnr.it/> ;
+    foaf:homePage <http://linkeddata.ge.imati.cnr.it/> ;
+    dct:title "LusTRE: Linked Thesaurus fRamework for Environment"@en ;
+    dct:description "LusTRE is a multilingual Thesaurus Framework (TF) for the Environment developed as part of the eENVplus project about infrastructures for the INSPIRE implementation. The Framework aims to provide shared standard and scientific terms for a common understanding of environmental data among the different communities operating in the different field of the Environment. It shall support better metadata compilation and metadata discovery for describing and finding INSPIRE data and services. LusTRE addresses the needs of different user communities in sharing digital information at cross-border level, i.e. concept inter-operability and concept-availability in multiple languages as it is needed in metadata compilation and information discovery. It can be exploited by the National Environmental Agency, the International Environmental Agency, Environmental Communities as well as Terminological Experts and the Semantic Web Community."@en ;
+    dcat:contactPoint lustrem:LusTRETEAM;
+    dct:creator lustrem:LusTRETEAM;
+    dct:publisher lustrem:LusTRETEAM;
     dcat:dataset lustrem:EARTh20140604 ;
     dcat:service lustrem:sparqlEndPoint .
 
@@ -62,16 +69,18 @@ lustrem:sparqlEndPoint
         prov:agent <https://w3id.org/people/ralbertoni/> ;
         dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
     ] ;
-    dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
+    dcat:servesDataset lustrem:EARTh20140604. #lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
 
 
 # Minimal endpoint description
+# TODO: describe all the subgraphs
 lustrem:sparqlEndpointServiceDescription a sd:Service ;
     sd:endpoint <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
     sd:supportedLanguage sd:SPARQL10Query ;
     sd:resultFormat <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle> ;
     #sd:extensionFunction <http://example.org/Distance> ;
     # sd:feature sd:DereferencesURIs ;
+  
     sd:defaultEntailmentRegime ent:RDFS ;
     sd:defaultDataset [
         a sd:Dataset ;
@@ -98,7 +107,61 @@ lustrem:LusTRETEAM  a    vcard:Organization, foaf:Group ;
         # the authority/agency defining the identifier scheme, used if the agency has no URI
         adms:schemaAgency "ORCID" 
     ] .
+
+
+lustrem:EARTh20140604
+        a dcat:Dataset ;
+        dct:created "2011-06-04+02:00"^^xsd:date ;
+        dct:creator <http://dblp.l3s.de/d2r/resource/authors/Valentina_De_Santis> , <http://dblp.l3s.de/d2r/resource/authors/Paolo_Plini> , <http://dblp.l3s.de/d2r/resource/authors/Sabin_Di_Franco> ;
+        dct:description "The Environmental Applications Reference Thesaurus (EARTh) has been compiled and is maintained by the CNR-IIA-EKOLab to facilitate the indexing, retrieval, harmonising and integration of human- and machine-readable environmental information from disparate sources, across the cultural and linguistic barriers. Ownership of such material always remains with the CNR-IIA-EKOLab."@en ;
+        dct:issued "2014-06-04+02:00"^^xsd:date ;
+        dct:language <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
+        dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:modified "2014-06-04+02:00"^^xsd:date ;
+        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:title "EARTh- Enviromental Applications Reference THesaurus (Version: Linked Data 1.5)"@en ;
+        dct:type <http://purl.org/dc/dcmitype/Dataset> ;
+        pav:version "Linked Data 1.5" ;
+        void:vocabulary skos: ;
+        dct:conformsTo skos: ;
+        owl:versionInfo "Linked Data 1.5" ;
+        dcat:contactPoint lustrem:LusTRETEAM ;
+        dcat:distribution lustrem:EARTh20140604jsonld , lustrem:EARTh20140604ttl , lustrem:EARTh20140604SPARQL ;
+        dcat:landingPage <http://linkeddata.ge.imati.cnr.it/resource/EARTh?language=en> ;
+        dcat:keyword "Environment" , "Thesaurus" ;
+        dcat:theme <http://dbpedia.org/resource/Thesaurus> , <http://dbpedia.org/resource/Natural_environment> .
     
-    
-    
+lustrem:EARTh20140604jsonld
+        a dcat:Distribution ;
+        dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:modified "2014-06-04+02:00"^^xsd:date ;
+        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:title "JSON-LD distribution of dataset" ;
+        void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
+        dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.jsonld> ;
+        dcat:mediaType "application/ld+json" .
+
+lustrem:EARTh20140604ttl
+        a dcat:Distribution ;
+        dct:issued "2014-06-04+02:00"^^xsd:date ;
+        dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:modified "2014-06-04+02:00"^^xsd:date ;
+        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:title "Turtle distribution of dataset" ;
+        void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
+        dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.ttl> ;
+        dcat:mediaType "text/turtle" .
+
+lustrem:EARTh20140604SPARQL
+        a dcat:Distribution ;
+        dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:modified "2014-06-04+02:00"^^xsd:date ;
+        dct:publisher <http://dblp.l3s.de/d2r/resource/authors/Riccardo_Albertoni> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:title "SPARQL access to dataset" ;
+        void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
+        dcat:accessService lustrem:sparqlEndPoint .
+       # dcat:mediaType     "application/sparql-results+csv" , "application/sparql-results+json" , "application/sparql-results+xml" .
+
+
+
     
