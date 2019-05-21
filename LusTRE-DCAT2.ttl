@@ -131,7 +131,7 @@ lustrem:EARTh20140604
         dct:conformsTo skos: ;
         owl:versionInfo "Linked Data 1.5" ;
         dcat:contactPoint lustrem:LusTRETEAM ;
-        dcat:distribution lustrem:EARTh20140604jsonld , lustrem:EARTh20140604ttl , lustrem:EARTh20140604SPARQL ;
+        dcat:distribution lustrem:EARTh20140604jsonld , lustrem:EARTh20140604ttl , lustrem:EARTh20140604SPARQL , lustrem:EARTh20140604gzippedjsonld;
         dcat:landingPage <http://linkeddata.ge.imati.cnr.it/resource/EARTh?language=en> ;
         dcat:keyword "Environment" , "Thesaurus" ;
         dct:isReferencedBy <https://doi.org/10.3233/SW-130122> ;
@@ -146,7 +146,19 @@ lustrem:EARTh20140604jsonld
         dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
         dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.jsonld> ;
-        dcat:mediaType "application/ld+json" .
+        dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> .
+
+lustrem:EARTh20140604gzippedjsonld
+        a dcat:Distribution ;
+        dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:modified "2014-06-04+02:00"^^xsd:date ;
+        dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:title "zipped JSON-LD distribution of dataset" ;
+        dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
+        void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
+        dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.jsonld.gz> ;
+        dcat:compressFormat <http://www.iana.org/assignments/media-types/application/gzip> ;
+        dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> .
 
 lustrem:EARTh20140604ttl
         a dcat:Distribution ;
@@ -157,7 +169,7 @@ lustrem:EARTh20140604ttl
         dct:title "Turtle distribution of dataset" ;
         void:uriSpace "http://linkeddata.ge.imati.cnr.it/resource/EARTh/" ;
         dcat:downloadURL <https://w3id.org/lustre/dump/EARTh20140604.ttl> ;
-        dcat:mediaType "text/turtle" .
+        dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
 lustrem:EARTh20140604SPARQL
         a dcat:Distribution ;
