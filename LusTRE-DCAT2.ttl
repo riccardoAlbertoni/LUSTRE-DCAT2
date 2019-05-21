@@ -44,7 +44,7 @@ lustrem:lustre a dcat:Catalog;
     dcat:service lustrem:sparqlEndPoint .
 
 lustrem:sparqlEndPoint 
-    a dcat:DataDistributionService ;
+    a dcat:DataService ;
     dcat:endpointURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
     dct:conformsTo <https://www.w3.org/TR/sparql11-service-description/> ;
     dcat:endpointDescription lustrem:sparqlEndpointServiceDescription ;
