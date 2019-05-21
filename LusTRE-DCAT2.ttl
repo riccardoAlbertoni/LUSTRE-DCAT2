@@ -41,7 +41,9 @@ lustrem:lustre a dcat:Catalog;
     dct:creator lustrem:LusTRETEAM;
     dct:publisher lustrem:LusTRETEAM;
     dcat:dataset lustrem:EARTh20140604 ;
-    dcat:service lustrem:sparqlEndPoint .
+    dcat:service lustrem:sparqlEndPoint ;
+    dct:isReferencedBy <https://doi.org/10.1007/s12145-018-0344-8>
+.
 
 lustrem:sparqlEndPoint 
     a dcat:DataService ;
@@ -70,6 +72,7 @@ lustrem:sparqlEndPoint
         prov:agent <https://w3id.org/people/ralbertoni/> ;
         dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
     ] ;
+    dct:isReferencedBy <https://doi.org/10.1007/s12145-018-0344-8> ;
     dcat:servesDataset lustrem:EARTh20140604. #lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
 
 
@@ -131,6 +134,7 @@ lustrem:EARTh20140604
         dcat:distribution lustrem:EARTh20140604jsonld , lustrem:EARTh20140604ttl , lustrem:EARTh20140604SPARQL ;
         dcat:landingPage <http://linkeddata.ge.imati.cnr.it/resource/EARTh?language=en> ;
         dcat:keyword "Environment" , "Thesaurus" ;
+        dct:isReferencedBy <https://doi.org/10.3233/SW-130122> ;
         dcat:theme <http://dbpedia.org/resource/Thesaurus> , <http://dbpedia.org/resource/Natural_environment> .
     
 lustrem:EARTh20140604jsonld
