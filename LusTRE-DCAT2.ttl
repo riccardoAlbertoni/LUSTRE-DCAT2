@@ -37,6 +37,7 @@ lustrem:lustre a dcat:Catalog;
     dct:title "LusTRE: Linked Thesaurus fRamework for Environment"@en ;
     dct:description "LusTRE is a multilingual Thesaurus Framework (TF) for the Environment developed as part of the eENVplus project about infrastructures for the INSPIRE implementation. The Framework aims to provide shared standard and scientific terms for a common understanding of environmental data among the different communities operating in the different field of the Environment. It shall support better metadata compilation and metadata discovery for describing and finding INSPIRE data and services. LusTRE addresses the needs of different user communities in sharing digital information at cross-border level, i.e. concept inter-operability and concept-availability in multiple languages as it is needed in metadata compilation and information discovery. It can be exploited by the National Environmental Agency, the International Environmental Agency, Environmental Communities as well as Terminological Experts and the Semantic Web Community."@en ;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ; 
+    dcat:keyword "thesauri"@en,"environment"@en, "framework"@en ;
     dcat:contactPoint lustrem:LusTRETEAM;
     dct:creator lustrem:LusTRETEAM;
     dct:publisher lustrem:LusTRETEAM;
