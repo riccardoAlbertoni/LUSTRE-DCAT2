@@ -50,7 +50,7 @@ lustrem:lustre a dcat:Catalog;
 
 lustrem:DBPEDIACategories
   a skos:ConceptScheme ;
-  skos:prefLabel "The set of categories provided by DBPEDIA" 
+  skos:prefLabel "The set of categories provided by DBPEDIA"@en
   .
 
 lustrem:sparqlEndPoint 
