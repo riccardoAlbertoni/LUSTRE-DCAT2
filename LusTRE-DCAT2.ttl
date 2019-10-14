@@ -143,7 +143,13 @@ lustrem:EARTh20140604
         dcat:landingPage <http://linkeddata.ge.imati.cnr.it/resource/EARTh?language=en> ;
         dcat:keyword "Environment" , "Thesaurus" ;
         dct:isReferencedBy <https://doi.org/10.3233/SW-130122> ;
-        dcat:theme <http://dbpedia.org/resource/Thesaurus> , <http://dbpedia.org/resource/Natural_environment> .
+        dcat:theme <http://dbpedia.org/resource/Thesaurus> , <http://dbpedia.org/resource/Natural_environment> ;
+        prov:qualifiedAttribution [
+            a prov:Attribution ;
+            prov:agent <https://w3id.org/people/ralbertoni/> ;
+            dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
+        ] ;
+  .
     
 lustrem:EARTh20140604jsonld
         a dcat:Distribution ;
