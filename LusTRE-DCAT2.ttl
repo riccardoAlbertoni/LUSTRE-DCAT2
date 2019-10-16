@@ -149,6 +149,11 @@ lustrem:EARTh20140604
             prov:agent <https://w3id.org/people/ralbertoni/> ;
             dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
         ] ;
+        dcat:qualifiedRelation [
+            a dcat:Relationship ;
+            dct:relation lustrem:EARTh20130604;
+            dcat:hadRole <http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/revisionOf>
+  ] ;
   .
     
 lustrem:EARTh20140604jsonld
@@ -197,5 +202,36 @@ lustrem:EARTh20140604SPARQL
        # dcat:mediaType     "application/sparql-results+csv" , "application/sparql-results+json" , "application/sparql-results+xml" .
 
 
+# a previosus version of EARTh
+lustrem:EARTh20130604
+    a dcat:Dataset ;
+    dct:created "2011-06-04+02:00"^^xsd:date ;
+    dct:creator <http://dblp.l3s.de/d2r/resource/authors/Valentina_De_Santis> , <http://dblp.l3s.de/d2r/resource/authors/Paolo_Plini> , <http://dblp.l3s.de/d2r/resource/authors/Sabin_Di_Franco> ;
+    dct:description "The Environmental Applications Reference Thesaurus (EARTh) has been compiled and is maintained by the CNR-IIA-EKOLab to facilitate the indexing, retrieval, harmonising and integration of human- and machine-readable environmental information from disparate sources, across the cultural and linguistic barriers. Ownership of such material always remains with the CNR-IIA-EKOLab."@en ;
+    dct:issued "2013-06-04+02:00"^^xsd:date ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
+    dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
+    dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+    dct:title "EARTh- Enviromental Applications Reference THesaurus (Version: 2013)"@en ;
+    dct:type <http://purl.org/dc/dcmitype/Dataset> ;
+    pav:version "Version: 2013" ;
+    void:vocabulary skos: ;
+    dct:conformsTo skos: ;
+    owl:versionInfo "Version: 2013" ;
+    dcat:contactPoint lustrem:LusTRETEAM ;
+    dcat:distribution lustrem:EARTh20130604ttl ;
+    dcat:keyword "Environment" , "Thesaurus" ;
+    dcat:theme <http://dbpedia.org/resource/Thesaurus> , <http://dbpedia.org/resource/Natural_environment> ;
+  .
 
+lustrem:EARTh20130604ttl
+        a dcat:Distribution ;
+        dct:issued "2013-06-04+02:00"^^xsd:date ;
+        dct:license <http://creativecommons.org/licenses/by-nc-nd/3.0/> ;
+        dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+        dct:title "Turtle distribution of dataset" ;
+        void:uriSpace "http://linkeddata.ge.imati.cnr.it:2020/resource/EARTh/" ;
+        dcat:downloadURL <http://pers.ge.imati.cnr.it/albertoni/NatureSDIPLUS/DumpEarth20130604.ttl> ;
+        dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
     
