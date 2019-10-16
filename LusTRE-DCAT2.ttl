@@ -102,12 +102,56 @@ lustrem:sparqlEndpointServiceDescription a sd:Service ;
         ] ;
     ] .
 
+
+lustrem:LusTRE-ES 
+    a dcat:DataService ;
+    #dcat:endpointURL <http://linkeddata.ge.imati.cnr.it/tfes/> ;
+    dct:conformsTo <http://linkeddata.ge.imati.cnr.it/services.jsp> ;
+    dcat:contactPoint lustrem:LusTRETEAMDISY ;
+    dct:creator [  
+        a  foaf:Organization ;
+        rdfs:label "Disy Informationssysteme GmbH"@en ;   
+        foaf:homepage <https://www.disy.net> ;
+        ] ;
+     # What is the landing pages of a sparql end point service? The page where is possible to pose Sparql Query..
+    dcat:landingPage <http://linkeddata.ge.imati.cnr.it/services.jsp> ;
+    # What is the language of a sparql endpoint?
+    #dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+    dct:title "LusTRE-ES: Services available in LusTRE"@en ;
+    dct:description "Services available to query thesauri and controlled vocabulary provided within LusTRE" ;
+    dct:modified "2015-09-06"^^xsd:date ;
+    dct:publisher lustrem:LusTRETEAM ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>; 
+    dct:isReferencedBy <https://doi.org/10.1007/s12145-018-0344-8> ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        #Future work: a more complete description of the software available in git can be provided  
+        dct:relation <https://github.com/eENVplus/tf-exploitation-server> ;
+        dcat:hadRole lustrem:deploymentRelation
+    ] ;
+    dcat:servesDataset lustrem:EARTh20140604. #lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
+
+#A locally minted relation waiting for identifying  the  equivalent standard relation
+lustrem:deploymentRelation
+    a skos:Concept ;
+    skos:prefLabel "deploys"@en; 
+    skos:definition "The subject of the relation deploys a software/server which is indicated in the object"@en.
+    
 lustrem:LusTRETEAM  a    vcard:Organization, foaf:Group ;
     vcard:hasEmail <mailto:lustre@ge.imati.cnr.it> ;
     foaf:mbox <mailto:lustre@ge.imati.cnr.it> ;
-    vcard:hasMember <https://w3id.org/people/ralbertoni/>, <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>, <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
-    foaf:member <https://w3id.org/people/ralbertoni/>, <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>,  <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+    vcard:hasMember <https://w3id.org/people/ralbertoni/>, <https://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>, <https://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+    foaf:member <https://w3id.org/people/ralbertoni/>, <https://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>,  <https://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
     vcard:title  "LusTRE Team"@en .
+
+lustrem:LusTRETEAMDYSI a vcard:Organization, foaf:Group ;
+    vcard:hasEmail <mailto:lustre-services@ge.imati.cnr.it> ;
+    foaf:mbox <mailto:lustre-services@ge.imati.cnr.it> ;
+    vcard:hasMember <https://w3id.org/people/ralbertoni/>, <https://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>, <https://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino>, <https://dblp.l3s.de/d2r/resource/authors/Roman_W%C3%B6ssner>,	<https://dblp.l3s.de/d2r/resource/authors/Andreas_Abecker>, <https://dblp.l3s.de/d2r/resource/authors/Karsten_Schnitter> ;
+    foaf:member <https://w3id.org/people/ralbertoni/>, <https://dblp.l3s.de/d2r/resource/authors/Paola_Podesta>, <https://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino>, <https://dblp.l3s.de/d2r/resource/authors/Roman_W%C3%B6ssner>,	<https://dblp.l3s.de/d2r/resource/authors/Andreas_Abecker>, <https://dblp.l3s.de/d2r/resource/authors/Karsten_Schnitter>;
+    vcard:title  "LusTRE-ES Team"@en .
+    
+
 
 <https://w3id.org/people/ralbertoni/> a foaf:Person ;
     foaf:familyName "Albertoni";
