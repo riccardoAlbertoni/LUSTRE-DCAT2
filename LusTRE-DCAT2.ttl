@@ -40,12 +40,24 @@ lustrem:lustre a dcat:Catalog;
     dcat:keyword "thesauri"@en,"environment"@en, "framework"@en ;
     dcat:theme <http://dbpedia.org/resource/Category:Thesauri>, <http://dbpedia.org/page/Category:Environmental_science>;
     dcat:themeTaxonomy lustrem:DBPEDIACategories ;
+    dcat:distribution  lustrem:lustreDump;
     dcat:contactPoint lustrem:LusTRETEAM;
     dct:creator lustrem:LusTRETEAM;
     dct:publisher lustrem:LusTRETEAM;
-    dcat:dataset lustrem:EARTh20140604 ;
+    dcat:dataset lustrem:EARTh20140604, lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:AGROVOC20140722, lustrem:GEMET20140608  ;
     dcat:service lustrem:sparqlEndPoint ;
     dct:isReferencedBy <https://doi.org/10.1007/s12145-018-0344-8>
+.
+# a dump as a whole
+lustrem:lustreDump 
+    a  dcat:Distribution ;
+    dct:modified "2016-06-04+02:00"^^xsd:date ;
+    dct:publisher <https://w3id.org/people/ralbertoni/> , <http://dblp.l3s.de/d2r/resource/authors/Paola_Podesta> , <http://dblp.l3s.de/d2r/resource/authors/Monica_De_Martino> ;
+    dct:title "Tar Gziped Turtle distribution of LusTRE" ;
+    dcat:downloadURL <https://w3id.org/lustre/dump/lustreall.tar.gz> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle>;
+    dcat:packageFormat <http://publications.europa.eu/resource/authority/file-type/TAR>;
+    dcat:compressFormat <http://www.iana.org/assignments/media-types/application/gzip>
 .
 
 lustrem:DBPEDIACategories
@@ -81,7 +93,7 @@ lustrem:sparqlEndPoint
         dcat:hadRole <http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/processor>
     ] ;
     dct:isReferencedBy <https://doi.org/10.1007/s12145-018-0344-8> ;
-    dcat:servesDataset lustrem:EARTh20140604. #lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
+    dcat:servesDataset lustrem:EARTh20140604, lustrem:EUROVOC20121215, lustrem:ThIST20140804, lustrem:INSPIREthemeregister20140604, lustrem:AGROVOC20140722, lustrem:GEMET20140608 .
 
 
 # Minimal endpoint description
@@ -278,4 +290,165 @@ lustrem:EARTh20130604ttl
         void:uriSpace "http://linkeddata.ge.imati.cnr.it:2020/resource/EARTh/" ;
         dcat:downloadURL <http://pers.ge.imati.cnr.it/albertoni/NatureSDIPLUS/DumpEarth20130604.ttl> ;
         dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
-    
+
+
+####
+lustrem:ThIST20140804
+        a                  dcat:Dataset ;
+        dct:created    "2014-06-08+02:00"^^xsd:date ;
+        dct:issued     "2014-08-04+02:00"^^xsd:date ;
+        dct:language   <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
+        dct:license    <http://opendefinition.org/licenses/cc-by/> ;
+        dct:modified   "2014-08-04+02:00"^^xsd:date ;
+        dct:title      "ThIST - Italian Thesaurus of Earth Sciences (Version: Linked Data 1.0)"@en ;
+        void:vocabulary    skos: ;
+        dcat:distribution   lustrem:ThIST20140804ttl , lustrem:ThIST20140804jsonld .
+
+lustrem:ThIST20140804ttl
+        a                 dcat:Distribution ;
+        dct:issued    "2014-08-04+02:00"^^xsd:date ;
+        dct:license   <http://opendefinition.org/licenses/cc-by/> ;
+        dct:modified  "2014-08-04+02:00"^^xsd:date ;
+        dct:title     "Turtle distribution of dataset" ;
+        void:uriSpace     "http://linkeddata.ge.imati.cnr.it/resource/ThIST/" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/ThIST20140804.ttl> ;
+        dcat:mediaType    <https://www.iana.org/assignments/media-types/text/turtle> .
+
+lustrem:ThIST20140804jsonld
+        a                 dcat:Distribution ;
+        dct:license   <http://opendefinition.org/licenses/cc-by/> ;
+        dct:modified  "2014-08-04+02:00"^^xsd:date ;
+        dct:title     "JSON-LD distribution of dataset" ;
+        void:uriSpace     "http://linkeddata.ge.imati.cnr.it/resource/ThIST/" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/ThIST20140804.jsonld> ;
+        dcat:mediaType    <https://www.iana.org/assignments/media-types/application/ld+json> .
+
+lustrem:ThIST20140804SPARQL
+        a                 dcat:Distribution  ;
+        dct:license   <http://opendefinition.org/licenses/cc-by/> ;
+        dct:modified  "2014-08-04+02:00"^^xsd:date ;
+        dct:title     "SPARQL access to dataset" ;
+        void:uriSpace     "http://linkeddata.ge.imati.cnr.it/resource/ThIST/" ;
+        dcat:accessURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+        dcat:accessService lustrem:sparqlEndPoint ;
+       .
+
+lustrem:EUROVOC20121215
+        a                    dcat:Dataset ;
+        dct:description  "EuroVoc is a multilingual, multidisciplinary thesaurus covering the activities of the EU, the European Parliament in particular. It contains terms in 23 EU languages (Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish and Swedish), plus Serbian. EuroVoc is managed by the Publications Office, which moved forward to ontology-based thesaurus management and semantic web technologies conformant to W3C recommendations as well as latest trends in thesaurus standards.  EuroVoc users include the European Parliament, the Publications Office, national and regional parliaments in Europe, plus national governments and private users around the world.© European Union, 2015, http://eurovoc.europa.eu/"@en ;
+        dct:issued       "2012-12-15+02:00"^^xsd:date ;
+        dct:language     <http://id.loc.gov/vocabulary/iso639-1/sv> , <http://id.loc.gov/vocabulary/iso639-1/hr> , <http://id.loc.gov/vocabulary/iso639-1/hu> , <http://id.loc.gov/vocabulary/iso639-1/lv> , <http://id.loc.gov/vocabulary/iso639-1/nl> , <http://id.loc.gov/vocabulary/iso639-1/pl> , <http://id.loc.gov/vocabulary/iso639-1/sl> , <http://id.loc.gov/vocabulary/iso639-1/cs> , <http://id.loc.gov/vocabulary/iso639-1/da> , <http://id.loc.gov/vocabulary/iso639-1/bg> , <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/de> , <http://id.loc.gov/vocabulary/iso639-1/el> , <http://id.loc.gov/vocabulary/iso639-1/et> , <http://id.loc.gov/vocabulary/iso639-1/lt> , <http://id.loc.gov/vocabulary/iso639-1/es> , <http://id.loc.gov/vocabulary/iso639-1/pt> , <http://id.loc.gov/vocabulary/iso639-1/fr> , <http://id.loc.gov/vocabulary/iso639-1/sk> , <http://id.loc.gov/vocabulary/iso639-1/ro> , <http://id.loc.gov/vocabulary/iso639-1/sr> , <http://id.loc.gov/vocabulary/iso639-1/mt> , <http://id.loc.gov/vocabulary/iso639-1/fi> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
+        dct:license      <http://eurovoc.europa.eu/drupal/?q=legalnotice&cl=en> ;
+        dct:modified     "2012-12-15+02:00"^^xsd:date ;
+        dct:title        "EUROVOC (ver: 4.4)"@en ;
+        void:vocabulary      skos: ;
+        dcat:distribution    lustrem:EUROVOC20121215SPARQL , lustrem:EUROVOC20121215ttl , lustrem:EUROVOC20121215jsonld .
+
+lustrem:EUROVOC20121215ttl
+        a                 dcat:Distribution ;
+        dct:issued    "2012-12-15+02:00"^^xsd:date ;
+        dct:license   <http://eurovoc.europa.eu/drupal/?q=legalnotice&cl=en> ;
+        dct:modified  "2012-12-15+02:00"^^xsd:date ;
+        dct:title     "Turtle distribution of dataset" ;
+        void:uriSpace     "http://eurovoc.europa.eu/" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/EUROVOC20121215.ttl> ;
+        dcat:mediaType     <https://www.iana.org/assignments/media-types/text/turtle>.
+
+lustrem:EUROVOC20121215jsonld
+        a                 dcat:Distribution ;
+        dct:license   <http://eurovoc.europa.eu/drupal/?q=legalnotice&cl=en> ;
+        dct:modified  "2012-12-15+02:00"^^xsd:date ;
+        dct:title     "JSON-LD distribution of dataset" ;
+        void:uriSpace     "http://eurovoc.europa.eu/" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/EUROVOC20121215.jsonld> ;
+        dcat:mediaType   <https://www.iana.org/assignments/media-types/application/ld+json> .
+
+lustrem:EUROVOC20121215SPARQL
+        a                 dcat:Distribution  ;
+        dct:license   <http://eurovoc.europa.eu/drupal/?q=legalnotice&cl=en> ;
+        dct:modified  "2012-12-15+02:00"^^xsd:date ;
+        dct:title     "SPARQL access to dataset" ;
+        void:uriSpace     "http://eurovoc.europa.eu/" ;
+         dcat:accessURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+        dcat:accessService lustrem:sparqlEndPoint .
+
+
+lustrem:AGROVOC20140722
+        a                    dcat:Dataset ;
+        dct:created      "1980-01-01+02:00"^^xsd:date ;
+        dct:description  "The AGROVOC thesaurus contains more than 32 000 concepts in 25 languages covering topics related to food, nutrition, agriculture, fisheries, forestry, environment and other related domains"@en ;
+        dct:issued       "2014-07-22T23:35:46Z"^^xsd:dateTime ;
+        dct:language     <http://id.loc.gov/vocabulary/iso639-1/tr> , <http://id.loc.gov/vocabulary/iso639-1/sv> , <http://id.loc.gov/vocabulary/iso639-1/hu> , <http://id.loc.gov/vocabulary/iso639-1/ko> , <http://id.loc.gov/vocabulary/iso639-1/pl> , <http://id.loc.gov/vocabulary/iso639-1/ms> , <http://id.loc.gov/vocabulary/iso639-1/ja> , <http://id.loc.gov/vocabulary/iso639-1/cs> , <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/th> , <http://id.loc.gov/vocabulary/iso639-1/de> , <http://id.loc.gov/vocabulary/iso639-1/hi> , <http://id.loc.gov/vocabulary/iso639-1/lo> , <http://id.loc.gov/vocabulary/iso639-1/es> , <http://id.loc.gov/vocabulary/iso639-1/pt> , <http://id.loc.gov/vocabulary/iso639-1/uk> , <http://id.loc.gov/vocabulary/iso639-1/fr> , <http://id.loc.gov/vocabulary/iso639-1/sk> , <http://id.loc.gov/vocabulary/iso639-1/zh> , <http://id.loc.gov/vocabulary/iso639-1/ru> , <http://id.loc.gov/vocabulary/iso639-1/te> , <http://id.loc.gov/vocabulary/iso639-1/fa> , <http://id.loc.gov/vocabulary/iso639-1/ar> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
+        dct:license      <http://creativecommons.org/licenses/by/3.0/> ;
+        dct:modified     "2014-07-22T23:35:46Z"^^xsd:dateTime ;
+        dct:title        "Agrovoc (release: July 2014)"@en ;
+        void:vocabulary      skos: ;
+        dcat:distribution    lustrem:AGROVOC20140722SPARQL , lustrem:AGROVOC20140722ttl , lustrem:AGROVOC20140722jsonld .
+
+lustrem:AGROVOC20140722jsonld
+        a                 dcat:Distribution ;
+        dct:license   <http://creativecommons.org/licenses/by/3.0/> ;
+        dct:modified  "2014-07-22T23:35:46Z"^^xsd:dateTime ;
+        dct:title     "JSON-LD distribution of dataset" ;
+        void:uriSpace     "http://aims.fao.org/aos/agrovoc" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/AGROVOC20140722.jsonld> ;
+        dcat:mediaType    <https://www.iana.org/assignments/media-types/application/ld+json>.
+
+lustrem:AGROVOC20140722ttl
+        a                 dcat:Distribution ;
+        dct:issued    "2014-07-22T23:35:46Z"^^xsd:dateTime ;
+        dct:license   <http://creativecommons.org/licenses/by/3.0/> ;
+        dct:modified  "2014-07-22T23:35:46Z"^^xsd:dateTime ;
+        dct:title     "Turtle distribution of dataset" ;
+        void:uriSpace     "http://aims.fao.org/aos/agrovoc" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/AGROVOC20140722.ttl> ;
+        dcat:mediaType     <https://www.iana.org/assignments/media-types/text/turtle> .
+
+lustrem:AGROVOC20140722SPARQL
+        a                 dcat:Distribution  ;
+        dct:license   <http://creativecommons.org/licenses/by/3.0/> ;
+        dct:modified  "2012-12-15+02:00"^^xsd:date ;
+        dct:title     "SPARQL access to dataset" ;
+        void:uriSpace     "http://aims.fao.org/aos/agrovoc" ;
+        dcat:accessURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+        dcat:accessService lustrem:sparqlEndPoint .
+
+lustrem:GEMET20140608
+        a                    dcat:Dataset ;
+        dct:description  "the GEneral Multilingual Environmental Thesaurus. A thesaurus in 20+ languages for terms related to the environment and environmental data published by the European Environment Agency."@en ;
+        dct:issued       "2014-06-08T23:35:46Z"^^xsd:dateTime ;
+        dct:language     <http://id.loc.gov/vocabulary/iso639-1/eu> , <http://id.loc.gov/vocabulary/iso639-1/tr> , <http://id.loc.gov/vocabulary/iso639-1/sv> , <http://id.loc.gov/vocabulary/iso639-1/hr> , <http://id.loc.gov/vocabulary/iso639-1/hu> , <http://id.loc.gov/vocabulary/iso639-1/lv> , <http://id.loc.gov/vocabulary/iso639-1/nl> , <http://id.loc.gov/vocabulary/iso639-1/pl> , <http://id.loc.gov/vocabulary/iso639-1/sl> , <http://id.loc.gov/vocabulary/iso639-1/cs> , <http://id.loc.gov/vocabulary/iso639-1/no> , <http://id.loc.gov/vocabulary/iso639-1/bg> , <http://id.loc.gov/vocabulary/iso639-1/it> , <http://id.loc.gov/vocabulary/iso639-1/de> , <http://id.loc.gov/vocabulary/iso639-1/el> , <http://id.loc.gov/vocabulary/iso639-1/et> , <http://id.loc.gov/vocabulary/iso639-1/ga> , <http://id.loc.gov/vocabulary/iso639-1/lt> , <http://id.loc.gov/vocabulary/iso639-1/zh-cn> , <http://id.loc.gov/vocabulary/iso639-1/es> , <http://id.loc.gov/vocabulary/iso639-1/pt> , <http://id.loc.gov/vocabulary/iso639-1/uk> , <http://id.loc.gov/vocabulary/iso639-1/ca> , <http://id.loc.gov/vocabulary/iso639-1/fr> , <http://id.loc.gov/vocabulary/iso639-1/sk> , <http://id.loc.gov/vocabulary/iso639-1/ro> , <http://id.loc.gov/vocabulary/iso639-1/en-us> , <http://id.loc.gov/vocabulary/iso639-1/ru> , <http://id.loc.gov/vocabulary/iso639-1/mt> , <http://id.loc.gov/vocabulary/iso639-1/fi> , <http://id.loc.gov/vocabulary/iso639-1/ar> , <http://id.loc.gov/vocabulary/iso639-1/en> ;
+        dct:license      <http://creativecommons.org/licenses/by/2.5/> ;
+        dct:modified     "2014-06-08T23:35:46Z"^^xsd:dateTime ;
+        dct:title        "GEMET (version 3.1, 2012-07-20)"@en ;
+        void:vocabulary      skos: ;
+        dcat:distribution    lustrem:GEMET20140608ttl , lustrem:GEMET20140608jsonld , lustrem:GEMET20140608SPARQL .
+
+lustrem:GEMET20140608ttl
+        a                 dcat:Distribution ;
+        dct:issued    "2014-06-08T23:35:46Z"^^xsd:dateTime ;
+        dct:license   <http://creativecommons.org/licenses/by/2.5/> ;
+        dct:modified  "2014-06-08T23:35:46Z"^^xsd:dateTime ;
+        dct:title     "Turtle distribution of dataset" ;
+        void:uriSpace     "http://www.eionet.europa.eu/gemet/" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/GEMET20140608.ttl> ;
+        dcat:mediaType   <https://www.iana.org/assignments/media-types/text/turtle>  .
+
+lustrem:GEMET20140608jsonld
+        a                 dcat:Distribution ;
+        dct:license   <http://creativecommons.org/licenses/by/2.5/> ;
+        dct:modified  "2014-06-08T23:35:46Z"^^xsd:dateTime ;
+        dct:title     "JSON-LD distribution of dataset" ;
+        void:uriSpace     "http://www.eionet.europa.eu/gemet/" ;
+        dcat:downloadURL  <http://w3id.org/lustre/dump/GEMET20140608.jsonld> ;
+        dcat:mediaType    <https://www.iana.org/assignments/media-types/application/ld+json> .
+
+lustrem:GEMET20140608SPARQL
+        a                 dcat:Distribution ;
+        dct:license   <http://creativecommons.org/licenses/by/2.5/> ;
+        dct:modified  "2014-06-08T23:35:46Z"^^xsd:dateTime ;
+        dct:title     "SPARQL access to dataset" ;
+        void:uriSpace     "http://www.eionet.europa.eu/gemet/" ;
+        dcat:accessURL <http://linkeddata.ge.imati.cnr.it:8890/sparql> ;
+        dcat:accessService lustrem:sparqlEndPoint .
+
