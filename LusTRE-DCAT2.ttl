@@ -342,7 +342,7 @@ lustrem:EUROVOC20121215
         dct:modified     "2012-12-15+02:00"^^xsd:date ;
         dct:title        "EUROVOC (ver: 4.4)"@en ;
         void:vocabulary      skos: ;
-        dct:rights  <https://op.europa.eu/en/web/about-us/legal-notices>
+        dct:rights  <https://op.europa.eu/en/web/about-us/legal-notices> ;
         dcat:distribution    lustrem:EUROVOC20121215SPARQL , lustrem:EUROVOC20121215ttl , lustrem:EUROVOC20121215jsonld .
 
 lustrem:EUROVOC20121215ttl
